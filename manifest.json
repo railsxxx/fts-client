@@ -1,0 +1,16 @@
+{
+  "name": "FTSClient",
+  "short_name": "FTSClient",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2A3443",
+  "description": "FTS industry 4.0 Client",
+  "theme_color": "#2A3443",
+  "icons": [
+    {
+      "src": "./img/pwa.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg"
+    }
+  ]
+}

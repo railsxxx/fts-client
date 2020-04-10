@@ -1,0 +1,37 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 4px;
+}
+
+tr#value {
+  background-color: GreenYellow;
+}
+
+table#res td#resName {
+  width: 20%;
+}
+table#res td#resCost, td#resTime {
+  width: 10%;
+}
+table#res td#resReady, td#resBusy {
+  width: 8%;
+  text-align: center;
+}
+table#res td#resService {
+  width: 44%;
+}
+
+table#transStation {
+  background-color: Gray;  
+  width: 10%;
+}
+/* td#transName {
+  font-weight: bold;
+} */
