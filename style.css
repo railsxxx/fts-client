@@ -13,6 +13,20 @@ td, th {
 tr#value {
   background-color: GreenYellow;
 }
+tr#value.active {
+    background-color: red;
+}
+tr#value.blink{
+  background-color: red;
+  animation: blinkingbackground 2s infinite;
+}
+@keyframes blinkingbackground{
+  0%		{ background-color: white;}
+  25%		{ background-color: rgb(253, 125, 125);}
+  50%		{ background-color: red;}
+  75%		{ background-color: rgb(253, 125, 125);}
+  100%	{ background-color: white;}
+}
 
 table#res td#resName {
   width: 20%;

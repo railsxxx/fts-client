@@ -7,6 +7,7 @@ let renderStation = wrapperTemplate.renderStation;
 
 class Resource {
   constructor(_resource) {
+    this.type = "Resource";
     this.resource = _resource;
   }
 
@@ -23,6 +24,7 @@ class Resource {
 
 class Transport {
   constructor(_transport) {
+    this.type = "Transport";
     this.transport = _transport;
   }
 
@@ -37,6 +39,7 @@ class Transport {
 
 class Carrier {
   constructor(_carrier) {
+    this.type = "Carrier";
     this.carrier = _carrier;
     this.home = { col: 0, row: 0 };
   }
@@ -62,6 +65,7 @@ class Carrier {
 
 class Station {
   constructor(_station) {
+    this.type = "Station";
     this.station = _station;
   }
 

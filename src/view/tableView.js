@@ -1,6 +1,6 @@
 const tableTemplate = require('./tableTemplate')
 
-let renderTable = tableTemplate.renderTable;
+const renderTable = tableTemplate.renderTable;
 
 function tableView(matrix) {
 
@@ -11,13 +11,13 @@ function tableView(matrix) {
   // console.log("colCount: " + colCount + ", rowCount: " + rowCount)
   let rows = [];
   let cells = [];
-  for (r = 0; r < rowCount; r++) {
-    for (c = 0; c < colCount; c++) {
+  for (let r = 0; r < rowCount; r++) {
+    for (let c = 0; c < colCount; c++) {
       if (matrix[c][r])
-        cells.push(matrix[c][r]).name;
+        cells.push(matrix[c][r]);
       else cells.push("null");
     }
-    // html += "<br>";
+    setBlink(cells);
     rows.push(cells);
     cells = [];
   }
@@ -25,6 +25,14 @@ function tableView(matrix) {
   let rendered = renderTable(rows);
   // console.log("rendered: " + rendered);
   return rendered;
+}
+
+function setBlink(cells) {
+  for (let c = 1; c < cells.length; c++) {
+    if (cells[0] == "null" && cells[c] != "null" && (cells[c]).type == "Carrier" && (cells[c]).orderNumber) {
+      cells[c].blink = true;
+    }
+  }
 }
 
 // exports ##################################

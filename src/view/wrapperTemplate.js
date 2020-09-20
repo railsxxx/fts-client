@@ -1,4 +1,5 @@
 
+
 function renderResource(resource) {
   return `
   <table id="res">
@@ -10,15 +11,15 @@ function renderResource(resource) {
       <td id="resBusy">B</td>
       <td id="resService">Service</td>
     </tr>
-    <tr id="value">
+    <tr id="value" class=${resource.service ? "active" : ""}>
       <td>${resource.name}</td>
       <td>1</td>
       <td>1</td>
       <td>
-        <input type="checkbox" checked>
+        <input type="checkbox" id="cb" ${resource.ready ? "checked" : ""} onclick="fts.handleClickReady(this, '${resource.id}');">
       </td>
       <td>
-        <input type="checkbox" checked>
+        <input type="checkbox" id="cb" ${resource.busy ? "checked" : ""} onclick="fts.handleClickBusy(this, '${resource.id}');">
       </td>
       <td>${resource.service ? resource.service : ""}</td>
     </tr>
@@ -26,6 +27,7 @@ function renderResource(resource) {
   `;
 }
 
+// , ${resource.name} onclick="handleClick(this, );"
 function renderTransport(transport) {
   return transport.name;
 }
@@ -40,7 +42,7 @@ function renderCarrier(carrier) {
       <td>Time</td>
       <td>CID</td>
     </tr>
-    <tr id="value">
+    <tr id="value" class=${carrier.blink ? "blink" : (carrier.product ? "active" : "")}>
       <td>${carrier.orderNumber ? carrier.orderNumber.substr(0, 4) + "..." : ""}</td>
       <td>${carrier.product ? carrier.product : ""}</td>
       <td>0</td>
@@ -65,3 +67,5 @@ function renderStation(station) {
 
 // exports ######################################
 module.exports.renderResource = renderResource; module.exports.renderTransport = renderTransport; module.exports.renderCarrier = renderCarrier; module.exports.renderStation = renderStation;
+// module.exports.renderStation = handleClick;
+
